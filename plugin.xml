@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-appcompat"
+        version="1.0.5">
+
+    <name>Cordova Plugin App Compat</name>
+    <description>Use app compat theme with colors</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,appcompat</keywords>
+	
+    <engines>
+        <engine name="cordova-android" version=">=7.0.0"/>
+    </engines>
+
+    <!-- android -->
+    <platform name="android">
+        <preference name="COLOR_PRIMARY_DARK" default="000000"/>
+	    <preference name="COLOR_PRIMARY" default="000000"/>
+
+        <edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:name='MainActivity']" mode="merge">
+            <activity android:theme="@style/AppCompatTheme" />
+        </edit-config>
+
+        <config-file target="res/values/strings.xml" parent="/*">
+            <color name="primary">#$COLOR_PRIMARY</color>
+            <color name="primaryDark">#$COLOR_PRIMARY_DARK</color>
+            <style name="AppCompatTheme" parent="Theme.AppCompat.NoActionBar">
+                <item name="colorPrimary">@color/primary</item>
+                <item name="colorPrimaryDark">@color/primaryDark</item>
+                <item name="colorAccent">@color/primaryDark</item>
+                <item name="android:windowBackground">@color/primary</item>
+                <item name="android:statusBarColor">@color/primaryDark</item>
+            </style>
+            <style name="AppCompatDialogTheme" parent="@android:style/Theme.Translucent.NoTitleBar">
+                <item name="android:statusBarColor">@color/primaryDark</item>
+            </style>
+        </config-file>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <preference name="StatusBarBackgroundColor" value="#$COLOR_PRIMARY_DARK" />
+            <preference name="backgroundColor" value="0xFF$COLOR_PRIMARY" />
+        </config-file>
+
+        <hook type="after_plugin_install" src="hooks/after_plugin_install/000.js"/>
+        <hook type="before_plugin_uninstall" src="hooks/before_plugin_uninstall/000.js"/>
+    </platform>
+</plugin>

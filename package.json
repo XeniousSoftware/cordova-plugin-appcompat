@@ -1,0 +1,28 @@
+{
+  "name": "cordova-plugin-appcompat",
+  "version": "1.0.0",
+  "description": "Android app compat plugin",
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XeniousSoftware/cordova-plugin-appcompat"
+  },
+  "keywords": [
+    "cordova",
+    "appcompat",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=4.0.0"
+    }
+  ],
+  "author": "Yunus Saha<yunus@xenioussoftware.com>",
+  "license": "Apache 2.0"
+}
