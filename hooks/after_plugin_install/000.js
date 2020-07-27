@@ -2,9 +2,10 @@ module.exports = function(ctx) {
     // make sure android platform is part of build
     if (ctx.opts.cordova.platforms.indexOf('android') < 0) {
         return;
-    }
-    var fs = ctx.requireCordovaModule('fs'),
-        path = ctx.requireCordovaModule('path');
+	}
+	
+    var fs = require('fs'),
+        path = require('path');
         
     var platformRoot = path.join(ctx.opts.projectRoot, 'platforms/android');
 

@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-appcompat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Android app compat plugin",
   "cordova": {
     "platforms": [
